@@ -12,9 +12,18 @@ const bookingSchema = mongoose.Schema({
 
 const userSchema = mongoose.Schema({
 
-    username: String,
-    uemail:String,
-    upassworde:String
+    // username: String,
+    // uemail:String,
+    // upassworde:String
+    byear:Number,
+    bbody:String,
+    bmake:String,
+    bcond:String,
+    bmodel:String,
+    bprice:String
+
+
+
 });
 
 const Booking = mongoose.model("Booking", bookingSchema);

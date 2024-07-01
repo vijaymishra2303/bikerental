@@ -52,7 +52,7 @@ app.get("/booking",async (req,resp)=>{
 
 
 
-//user collection
+//user  collection tarun bhaiya ke liye
 app.post("/user",  (req, res) => {
     upload(req, res,  (err) => {
         if (err) {
@@ -60,9 +60,15 @@ app.post("/user",  (req, res) => {
            
         } else {
                 const newUser = new User({
-                    uemail: req.body.uemail,
-                    username: req.body.username,
-                    upassword:req.body.upassword
+                    // uemail: req.body.uemail,
+                    // username: req.body.username,
+                    // upassword:req.body.upassword
+                    byear:req.body.byear,
+                    bbody:req.body.bbody,
+                    bmake:req.body.bmake,
+                    bcond:req.body.bcond,
+                    bmodel:req.body.bmodel,
+                    bprice:req.body.bprice
                 });
                  newUser.save()
                 res.send("File Uploaded ")
@@ -76,6 +82,9 @@ app.get("/user",async (req,resp)=>{
     resp.send(users)
 })
 
+
+
+// -------------------------
 
 
 app.listen(4000)

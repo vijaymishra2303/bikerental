@@ -1,6 +1,6 @@
 
 require("./mongoose")
-const { Booking, User ,Rashi } = require("./bikeSchema");// Importing models
+const { Vehicle, User ,Rashi } = require("./bikeSchema");// Importing models
 const express = require("express");
 const app = express();
 const multer = require("multer");
@@ -23,20 +23,20 @@ const storage = multer.diskStorage({
 const upload = multer({ storage:storage }).single("pimage");
 
 // POST method for creating a new product
-app.post("/booking",  (req, res) => {
+app.post("/vehicle",  (req, res) => {
     upload(req, res,  (err) => {
         if (err) {
             console.log(err);
            
         } else {
-                const newBooking = new  Booking({
+                const newVehicle = new  Vehicle({
                     pid: req.body.pid,
                     pname: req.body.pname,
                     pdesc:req.body.pdesc,
                      pimage: "http://localhost:4000/uploads/"+req.file.filename
                     
                 });
-                 newBooking.save();
+                 newVehicle.save();
                 res.send("File Uploaded")
             
         }
@@ -44,9 +44,9 @@ app.post("/booking",  (req, res) => {
 });
 
 
-app.get("/booking",async (req,resp)=>{
-        const bookings=await Booking.find()
-        resp.send(bookings)
+app.get("/vehicle",async (req,resp)=>{
+        const vehicles=await Vehicle.find()
+        resp.send(vehicles)
     })
 
 

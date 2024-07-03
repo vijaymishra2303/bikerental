@@ -1,20 +1,17 @@
 
 const mongoose = require("mongoose");
 
-const bookingSchema = mongoose.Schema({
-    pid: Number,
-    pname: String,
-    pdesc:String,
-    pimage: String
+const vehicleSchema = mongoose.Schema({
+    vid: Number,
+    vname: String,
+    vdesc:String,
+    vimage: String
 });
 
 
 
 const userSchema = mongoose.Schema({
 
-    // username: String,
-    // uemail:String,
-    // upassworde:String
     byear:Number,
     bbody:String,
     bmake:String,
@@ -26,8 +23,8 @@ const userSchema = mongoose.Schema({
 
 });
 
-const Booking = mongoose.model("Booking", bookingSchema);
+const Vehicle = mongoose.model("Vehicle", vehicleSchema);
 const User = mongoose.model("User", userSchema);
 
 
-module.exports = { Booking, User };
+module.exports = { Vehicle, User };

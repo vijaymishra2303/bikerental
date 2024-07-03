@@ -30,10 +30,10 @@ app.post("/vehicle",  (req, res) => {
            
         } else {
                 const newVehicle = new  Vehicle({
-                    pid: req.body.pid,
-                    pname: req.body.pname,
-                    pdesc:req.body.pdesc,
-                     pimage: "http://localhost:4000/uploads/"+req.file.filename
+                    vid: req.body.vid,
+                    vname: req.body.vname,
+                    vdesc:req.body.vdesc,
+                     vimage: "http://localhost:4000/uploads/"+req.file.filename
                     
                 });
                  newVehicle.save();

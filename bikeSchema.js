@@ -5,6 +5,7 @@ const vehicleSchema = mongoose.Schema({
     vid: Number,
     vname: String,
     vdesc:String,
+    vprice:String,
     vimage: String
 });
 

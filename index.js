@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage:storage }).single("pimage");
+const upload = multer({ storage:storage }).single("vimage");
 
 // POST method for creating a new product
 app.post("/vehicle",  (req, res) => {
@@ -32,6 +32,7 @@ app.post("/vehicle",  (req, res) => {
                 const newVehicle = new  Vehicle({
                     vid: req.body.vid,
                     vname: req.body.vname,
+                    vprice:req.body.vprice,
                     vdesc:req.body.vdesc,
                      vimage: "http://localhost:4000/uploads/"+req.file.filename
                     

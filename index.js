@@ -38,7 +38,7 @@ app.post("/vehicle",  (req, res) => {
                     
                 });
                  newVehicle.save();
-                res.send("File Uploaded")
+                res.send("File Upload")
             
         }
     });
